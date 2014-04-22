@@ -9,10 +9,9 @@ class Set
   # They all have the same color, or they have three different colors.
   # The rules of Set are summarized by: If you can sort a group of three cards into "Two of ____ and one of _____," then it is not a set.
   def valid?
-    valid = [:color, :shape, :count, :pattern].all? do |att|
+    [:color, :shape, :count, :pattern].all? do |att|
       (same?(@cards, att) || different?(@cards, att))
     end
-    return valid
   end
 
   def to_s
